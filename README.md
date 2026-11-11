@@ -5,6 +5,8 @@ This project visualizes aerodynamic flows and fluid dynamics using a massive par
 
 By utilizing **Compute Shaders**, **Shader Storage Buffer Objects (SSBOs)**, and **Indirect Drawing**, all particle physics and rendering commands are handled exclusively on the GPU. We will eventually use **Curl Noise** and **Signed Distance Fields (SDFs)** to simulate divergence-free fluid flows around interactive 3D obstacles.
 
+[<img src="img\aerodynamic_cow_meme.jpeg">]
+
 ## Prerequisites (Windows 11 / VS Code)
 To build and run this project, **MSVC compiler** is used, see guide below. (MinGW/GCC can also be used, but expect version error).
 
