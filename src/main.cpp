@@ -2,6 +2,16 @@
 #include "rlgl.h" // 讓你能呼叫 Raylib 封裝的底層 OpenGL 與 Compute Shader
 #include <iostream>
 
+
+// Since GLSL passes vectors as vec4, we don't use vec3
+// instead we use vec4 and put last element in the vector as null/other function
+struct Particle {
+    Vector4 position; // x, y, z, w (mention aboved)
+    Vector4 velocity; // vx, vy, vz, vw
+    Color color;      // (r, g, b, a)
+    float padding[3]; // 手動補滿 12 bytes，讓整個 struct 大小是 16 的倍數
+};
+
 int main() {
     // 建立 800x600 視窗
     InitWindow(800, 600, "GPU-Driven Fluid Simulation");

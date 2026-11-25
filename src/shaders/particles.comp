@@ -1,0 +1,19 @@
+#version 430 core
+
+layout(local_size_x = 256, local_size_y = 1, local_size_z = 1) in;
+
+struct Particle {
+    vec4 position;
+    vec4 velocity;
+    vec4 color; // 對應 C++ 的 Color + padding (共 16 bytes)
+};
+
+// SSBO 綁定點 0
+layout(std430, binding = 0) buffer ParticleBuffer {
+    Particle particles[];
+};
+
+void main() {
+    uint index = gl_GlobalInvocationID.x;
+    // ... 在這裡寫入速度與位置的更新邏輯 ...
+}
